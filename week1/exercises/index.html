@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WDD 330 portfolio - W01 Exercises</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../styles.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <h1>WDD 330 Portfolio</h1>
+    <h2>Week01 - Exercises</h2>
+
+
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class=" feature col col-md-3">
+            <div class="feature-icon bg-primary bg-gradient ">
+            </div>
+            <h2>Create</h2>
+            1. Function that reverse a number
+
+        </div>
+        <div class="feature col col-md-6">
+            <div class="feature-icon bg-primary bg-gradient ">
+            </div>
+            <h2>Codes</h2>
+            <pre>
+function reverse_number() {
+    let el = document.getElementById("ex01 ");
+    let n = el.value;
+    n = n + " ";
+    n = n.split(" ").reverse().join(" ");
+    document.getElementById('result01').value = n;
+    return result;
+}
+                </pre>
+        </div>
+        <div class="feature col col-md-3">
+            <div class="feature-icon bg-primary bg-gradient ">
+            </div>
+            <h2>Execution</h2>
+
+            Input number: <input id='ex01'></input>
+            <br> Result: <input id='result01'></input>
+
+            <section>
+                <button onclick="reverse_number() ">Run</button>
+            </section>
+            </a>
+        </div>
+    </div>
+
+    <section>
+        <button onclick="history.go(-1); "> Go Back</button>
+    </section>
+    <hr>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class=" feature col col-md-3">
+            <div class="feature-icon bg-primary bg-gradient ">
+            </div>
+            <h2>Create</h2>
+            2 - Function that checks whether a passed string is palindrome or not?
+        </div>
+        <div class="feature col col-md-6">
+            <div class="feature-icon bg-primary bg-gradient ">
+            </div>
+            <h2>Codes</h2>
+            <pre>
+function is_palindrome() {
+    let count = 0;
+    let el = document.getElementById("ex02");
+    let entry = el.value;
+    let str = entry.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '');
+    if (str === "") {
+        document.getElementById('result02').value = "Nothing found!";
+        return false;
+    }
+    let rest = (str.length) % 2;
+    if (rest === 0) {
+        count = (str.length) / 2;
+    } else {
+        if (str.length === 1) {
+            document.getElementById('result02').value = "Entry is a palindrome.";
+            return true;
+        } else {
+            count = (str.length - 1) / 2;
+        }
+    }
+    for (var x = 0; x < count; x++) {
+        if (str[x] != str.slice(-1 - x)[0]) {
+            document.getElementById('result02').value = "Entry is not a palindrome.";
+            return false;
+        }
+    }
+    document.getElementById('result02').value = "The entry is a palindrome.";
+    return true;
+}
+                </pre>
+        </div>
+        <div class="feature col col-md-3">
+            <div class="feature-icon bg-primary bg-gradient ">
+            </div>
+            <h2>Execution</h2>
+
+            Input number: <input id='ex02'></input>
+            <br> Result: <input id='result02'></input>
+
+            <section>
+                <button onclick="is_palindrome() ">Run</button>
+            </section>
+            </a>
+        </div>
+        <section>
+            <button onclick="history.go(-1); "> Go Back</button>
+        </section>
+    </div>
+    <hr>
+
+
+    <script>
+        function reverse_number() {
+            let el = document.getElementById("ex01");
+            let n = el.value;
+            n = n + " ";
+            n = n.split("").reverse().join("");
+            document.getElementById('result01').value = n;
+            return n;
+        }
+
+        function is_palindrome() {
+            let count = 0;
+            let el = document.getElementById("ex02");
+            let entry = el.value;
+            let str = entry.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '');
+            if (str === "") {
+                document.getElementById('result02').value = "Nothing found!";
+                return false;
+            }
+            let rest = (str.length) % 2;
+            if (rest === 0) {
+                count = (str.length) / 2;
+            } else {
+                if (str.length === 1) {
+                    document.getElementById('result02').value = "Entry is a palindrome.";
+                    return true;
+                } else {
+                    count = (str.length - 1) / 2;
+                }
+            }
+            for (var x = 0; x < count; x++) {
+                if (str[x] != str.slice(-1 - x)[0]) {
+                    document.getElementById('result02').value = "Entry is not a palindrome.";
+                    return false;
+                }
+            }
+            document.getElementById('result02').value = "The entry is a palindrome.";
+            return true;
+        }
+    </script>
+
+
+</body>
+
+</html>
