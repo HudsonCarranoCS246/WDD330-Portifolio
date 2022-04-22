@@ -1,9 +1,23 @@
 body {
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 2ch;
 }
 
 h1 {
-  background-color: antiquewhite;
-  padding: 1em;
+    background-color: antiquewhite;
+    padding: 1em;
+}
+
+button {
+    margin-left: 1.5ch;
+}
+
+ol.separator li {
+    padding: .5em 0;
+    border-bottom: 1px solid #CCC;
+}
+
+a {
+    text-decoration: none;
 }
