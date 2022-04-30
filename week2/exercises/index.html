@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WDD 330 portfolio - W01 Exercises</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../styles.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <h1>WDD 330 Portfolio</h1>
+    <h2>Week01 - Exercises</h2>
+
+
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class=" feature col col-md-3">
+            <div class="feature-icon bg-primary bg-gradient ">
+            </div>
+            <h2>Create</h2>
+            1. Function in variable
+
+        </div>
+        <div class="feature col col-md-6">
+            <div class="feature-icon bg-primary bg-gradient ">
+            </div>
+            <h2>Codes</h2>
+            <pre>
+let addNumber = (anum, bnum) => anum + bnum;
+
+function sumNumber() {
+    let num1 = parseInt(document.getElementById('num1').value);
+    let num2 = parseInt(document.getElementById('num2').value);
+    
+    document.getElementById('result01').value = addNumber(num1, num2);
+}
+            </pre>
+        </div>
+        <div class="feature col col-md-3">
+            <div class="feature-icon bg-primary bg-gradient ">
+            </div>
+            <h2>Execution</h2>
+
+            Input number1: <input id='num1'></input>
+            Input number2: <input id='num2'></input>
+            <br> Result: <input id='result01'></input>
+
+            <section>
+                <button onclick="sumNumber() ">Run</button>
+            </section>
+            </a>
+        </div>
+    </div>
+
+    <section>
+        <button onclick="history.go(-1); "> Go Back</button>
+    </section>
+    <hr>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class=" feature col col-md-3">
+            <div class="feature-icon bg-primary bg-gradient ">
+            </div>
+            <h2>Create</h2>
+            2 - Write a JavaScript function to compute the value of bn where n is the exponent and b is the bases.
+        </div>
+        <div class="feature col col-md-6">
+            <div class="feature-icon bg-primary bg-gradient ">
+            </div>
+            <h2>Codes</h2>
+            <pre>
+function exponent() {
+    let base = parseInt(document.getElementById('base').value);
+    let expo = parseInt(document.getElementById('expo').value);
+
+    let result = 1;
+    for (let i = 1; i <= expo; i++) {
+        result = base * result;
+    }
+
+    document.getElementById('result02').value = result;
+}    
+                </pre>
+        </div>
+        <div class="feature col col-md-3">
+            <div class="feature-icon bg-primary bg-gradient ">
+            </div>
+            <h2>Execution</h2>
+
+
+            Input Base: <input id='base'></input>
+            Input Exponent: <input id='expo'></input>
+            <br> Result: <input id='result02'></input>
+
+            <section>
+                <button onclick="exponent() ">Run</button>
+            </section>
+            </a>
+        </div>
+        <section>
+            <button onclick="history.go(-1); "> Go Back</button>
+        </section>
+    </div>
+    <hr>
+
+
+    <script>
+        let addNumber = (anum, bnum) => anum + bnum;
+
+        function sumNumber() {
+
+            let num1 = parseInt(document.getElementById('num1').value);
+            let num2 = parseInt(document.getElementById('num2').value);
+
+            document.getElementById('result01').value = addNumber(num1, num2);
+        }
+
+        function exponent() {
+            let base = parseInt(document.getElementById('base').value);
+            let expo = parseInt(document.getElementById('expo').value);
+
+            let result = 1;
+            for (var i = 1; i <= expo; i++) {
+                result = base * result;
+            }
+
+            document.getElementById('result02').value = result;
+
+        }
+    </script>
+
+
+</body>
+
+</html>
