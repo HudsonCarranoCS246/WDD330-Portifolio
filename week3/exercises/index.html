@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WDD 330 portfolio - W01 Exercises</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../styles.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <h1>WDD 330 Portfolio</h1>
+    <h2>Week03 - Exercises</h2>
+
+
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class=" feature col col-md-3">
+            <div class="feature-icon bg-primary bg-gradient ">
+            </div>
+            <h2>Create</h2>
+            1. Write a Bubble Sort algorithm in JavaScript. Note: Bubble sort is a simple sorting algorithm that works by repeatedly stepping through the list to be sorted, Sample Data: [6,4,0, 3,-2,1] Expected Output : [-2, 0, 1, 3, 4, 6]
+
+        </div>
+        <div class="feature col col-md-6">
+            <div class="feature-icon bg-primary bg-gradient ">
+            </div>
+            <h2>Codes</h2>
+            <pre>
+function bubbleSort(arr) {
+    var sorted = false;
+    while (!sorted) {
+        sorted = true;
+        for (var x = 0; x < arr.length - 1; x++) {
+            if (arr[x] > arr[x + 1]) {
+                var y = arr[x + 1];
+                arr[x + 1] = arr[x];
+                arr[x] = y;
+                sorted = false;
+            }
+        }
+    }
+    return arr;
+};
+
+function execute() {
+    let arraux = [6, 4, 0, 3, -2, 1];
+    document.getElementById("result01").innerHTML = bubbleSort(arraux);
+}
+           </pre>
+        </div>
+        <div class="feature col col-md-3">
+            <div class="feature-icon bg-primary bg-gradient ">
+            </div>
+            <h2>Execution</h2>
+            <br>Clicking "Run" will execute the Bubble Sort for the array = [6, 4, 0, 3, -2, 1].<br>
+            <br> Result:
+            <p id='result01'></p>
+
+            <section>
+                <button onclick="execute()">Run</button>
+            </section>
+            </a>
+        </div>
+    </div>
+
+    <section>
+        <button onclick="history.go(-1); "> Go Back</button>
+    </section>
+    <hr>
+
+    <script>
+        function bubbleSort(arr) {
+            var sorted = false;
+            while (!sorted) {
+                sorted = true;
+                for (var x = 0; x < arr.length - 1; x++) {
+                    if (arr[x] > arr[x + 1]) {
+                        var y = arr[x + 1];
+                        arr[x + 1] = arr[x];
+                        arr[x] = y;
+                        sorted = false;
+                    }
+                }
+            }
+            return arr;
+        };
+
+        function execute() {
+            let arraux = [6, 4, 0, 3, -2, 1];
+            document.getElementById("result01").innerHTML = bubbleSort(arraux);
+        }
+    </script>
+
+
+</body>
+
+</html>
