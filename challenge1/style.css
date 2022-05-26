@@ -127,7 +127,7 @@ body {
     font-size : 10rem;
   }
   section {
-    margin: 0.5rm;  
+    margin: 0.5rm !important;  
   }    
       
       
