@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 portfolio</title>
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+    <a href="../index.html">
+        <h1>WDD 330 Portfolio</h1>
+    </a>
+    <h2>Week07</h2>
+    <ul>
+        <li>
+            <h3>Notes</h3>
+            <ul>
+                <li>
+                    When I was studying ajax, I thought about making a program for the elders' Quorum activity that will take place on June 11, 2022. It's Valentine's Eve in Brazil. I started at the beginning of the week, however I got a lot of flu and suspected COVID-19. I couldn't finish and I couldn't even do what I wanted. My job is to make a conversation between vue and apis laravel. I create the apis with the Oracle database and create the fetchs in vue to fetch results. Not being able to do anything. I'm sorry. Follow the js with the ajax and the screen I made.					
+                </li>
+                
+                <li>
+                    <img src="coracao.png" width="400">
+                </li>
+                
+                    <div>
+                        <pre>
+    function pergunta(){
+        $.ajax({
+            type	 : "POST",
+            url	     : systemName+"/"+systemNameModule+"/index/pergunta",
+            dataType : 'json', 
+            success	 : function(retorno){
+                    
+                    if (retorno != '') {
+                        $('#pergunta').html(retorno['aux']);
+                        $('#num'  ).html(retorno['num']);
+                    }
+            }
+        });
+    }    
+    
+    function resposta(resp){
+        $.ajax({
+            type	 : "POST",
+            url	     : systemName+"/"+systemNameModule+"/index/resposta",
+            data     : resp,
+            dataType : 'json', 
+            success	 : function(retorno){
+                    
+                    if (retorno != '') {
+                        $('#resposta').html(retorno);
+                    }
+            }
+        });
+    }    
+                        </pre>
+                    </div>
+                
+
+            </ul>
+        </li>
+        <li>
+            <h3>Exercises</h3>
+            <ul>
+                <li>
+                    I didn't do any
+                   <!-- <a href="./exercises/index.html"> exercises</a> 
+                    <a href="./quizninja/index.html"> Quiz Ninja</a> -->
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>Questions:</h3>
+            <ol>
+                <li>
+                    I don't have any at the moment
+                </li>
+            </ol>
+        </li>
+    </ul>
+
+    <section>
+        <button onclick="history.go(-1);">Go Back</button>
+    </section>
+
+
+</body>
+
+</html>
