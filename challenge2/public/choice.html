@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Block 2 Challenge Proposals </title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        
+
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/floating-labels/">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      
+        <link rel="stylesheet" href="./css/style.css">
+      
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+     
+        <style>
+             /* Styling the button */
+        .h-btn {
+            cursor: pointer;
+            border-top: 3px solid goldenrod;
+            border-left: 4px solid goldenrod; 
+            border-right: 10px solid goldenrod; 
+            border-bottom: 10px solid goldenrod; 
+            border-radius: 25px; 
+            background-color: transparent;
+            padding: 5px 0;
+            height: 60px;
+            width: 100%;
+            color: #fae103;
+            font-size: 2.5em;
+            box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+            margin-left: 2rem;
+        }
+        .spaces {
+            margin-left: 2rem;
+        }
+
+        .pequeno {
+            margin-top: 30px;
+            width: 150px;
+        }
+        </style>
+    </head>
+
+    <body>
+        <div class="container col-md-12">
+            <div>
+                <h1>Starwars Info</h1>
+            </div>
+            <div class="text-center mb-4">
+                <img class="mb-4" src="../img/outros/shipspace.png" alt="Ship Space" width="150" height="150">
+            </div>
+
+            <div class="row justify-content-center  ">  
+                <div class="spaces">
+                    <button class="h-btn" onclick="window.location.href = 'people.html'">PEOPLE</button>
+                </div>
+
+                <div class="spaces">
+                    <button class="h-btn" onclick="window.location.href = 'planets.html'">PLANETS</button>
+                </div>
+
+                <div class="spaces">
+                    <button class="h-btn" onclick="window.location.href = 'spaceship.html'">SPACESHIP</button>
+                </div>
+
+                <!-- <div class="spaces">
+                    <button class="h-btn" onclick="window.location.href = 'creatures.html'">CREATURES</button>
+                </div> -->
+
+                <div class="spaces">
+                    <button class="h-btn" onclick="window.location.href = 'about.html'">ABOUT</button>
+                </div>
+            </div>
+          
+        </div> 
+        <div class="spaces pequeno" style="font-size: 10px !important;" >
+            <button class="h-btn" onclick="history.go(-1);">Go Back</button>
+        </div>
+    
+    </body>
+</html>
