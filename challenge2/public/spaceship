@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Block 2 Challenge Proposals </title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+ 
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/floating-labels/">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      
+        <link rel="stylesheet" href="./css/style.css">
+      
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+
+        <style>
+            /* Styling the button */
+       .h-btn {
+           cursor: pointer;
+           border-top: 3px solid goldenrod;
+           border-left: 4px solid goldenrod; 
+           border-right: 10px solid goldenrod; 
+           border-bottom: 10px solid goldenrod; 
+           border-radius: 25px; 
+           background-color: transparent;
+           padding: 5px 0;
+           height: 60px;
+           width: 100%;
+           color: #fae103;
+           font-size: 2.5em;
+           box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+           margin-left: 2rem;
+       }
+       .spaces {
+           margin-left: 2rem;
+       }
+
+       .pequeno {
+           margin-top: 30px;
+           width: 150px;
+       }
+       </style>    
+
+    </head>
+    <body>
+
+        <div class="container ">
+        
+            <div>
+                <h1>Starwars Info</h1>
+            </div>
+            <div class="text-center mb-4">
+                <img class="mb-4" src="./img/outros/shipspace.png" alt="Ship Space" width="150" height="150">
+            </div>
+            
+            <h2 style="color:goldenrod; text-align: center; font-size:2.5em;margin: 1em;"><strong>SPACESHIP</strong></h2>
+        
+
+            <div class="row justify-content-center  ">  
+                <h2 style="color:goldenrod">Chose a spaceship:</h2>
+                <div class="col-md-12 row justify-content-center" >
+                    <select class="col-md-4" name="peoples" id="peoples">
+                    </select> 
+                </div> 
+                    
+
+                <div class="col-md-6">
+                    <div class="h-card2">
+                        <div class="h-card-top">
+                        </div>
+                        <div class="h-card-cont"  style="height:600px;">
+                            <img id="imgSpaceship" name="imgSpaceship" src="" width="200px">
+                            <p>Informations</p>
+                            <div class="col-md-12" id="people-info-box" style="font-size: 1.4em; color:darkgoldenrod; margin-left: 1.5em; text-align:left;">
+                            </div>
+                        </div>
+                    </div>        
+                </div>
+            </div>
+
+            <div class="spaces pequeno" style="font-size: 10px !important;" >
+                <button class="h-btn" onclick="history.go(-1);">Go Back</button>
+            </div>
+        
+        </div>  
+    
+    <script>
+
+for(let i=1; i<=100; i++){
+
+    let starwarsAPI = "https://swapi.dev/api/starships/"+i;
+    ship =[];
+    fetch(starwarsAPI )
+    .then((response) => response.json())
+    .then(ship => ship.name);
+
+    console.log(ship);
+}
+
+
+
+        $('#peoples').change(function(){
+            let id =  $('#peoples').val();
+            chama(id);
+        });
+
+       var p_arr = [];
+        p_arr[0] = 'Select',
+        p_arr[2] = 'CR90 corvette',
+        p_arr[3] = 'Star Destroyer',
+        p_arr[5] = 'Sentinel-class landing craft',
+        p_arr[9] = 'Death Star',
+        p_arr[10] = 'Millennium Falcon',
+        p_arr[11] = 'Y-wing',
+        p_arr[12] = 'X-wing',
+        p_arr[13] = 'TIE Advanced x1',
+        p_arr[15] = 'Executor',
+        p_arr[17] = 'Rebel transport',
+        p_arr[21] = 'Slave 1',
+        p_arr[22] = 'Imperial shuttle',
+        p_arr[23] = 'EF76 Nebulon-B escort frigate',
+        p_arr[27] = 'Calamari Cruiser',
+        p_arr[28] = 'A-wing',
+        p_arr[29] = 'B-wing',
+        p_arr[31] = 'Republic Cruiser',
+        p_arr[32] = 'Droid control ship',
+        p_arr[39] = 'Naboo fighter',
+        p_arr[40] = 'Naboo Royal Starship',
+        p_arr[41] = 'Scimitar',
+        p_arr[43] = 'J-type diplomatic barge',
+        p_arr[47] = 'AA-9 Coruscant freighter',
+        p_arr[48] = 'Jedi starfighter',
+        p_arr[49] = 'H-type Nubian yacht',
+        p_arr[52] = 'Republic Assault ship',
+        p_arr[58] = 'Solar Sailer',
+        p_arr[59] = 'Trade Federation cruiser',
+        p_arr[61] = 'Theta-class T-2c shuttle',
+        p_arr[63] = 'Republic attack cruiser',
+        p_arr[64] = 'Naboo star skiff',
+        p_arr[65] = 'Jedi Interceptor',
+        p_arr[66] = 'arc-170',
+        p_arr[68] = 'Banking clan frigte',
+        p_arr[74] = 'Belbullab-22 starfighter',
+        p_arr[75] = 'V-wing';
+       
+
+   var p_img = [];
+        p_img[0] = '',
+        p_img[2] = 'https://img1.cgtrader.com/items/853761/2d4bc4a35f/large/tantive-iv-corellian-corvette-star-wars-3d-model-animated-max-fbx-mat.jpg',
+        p_img[3] = 'https://cdnb.artstation.com/p/assets/images/images/010/846/933/4k/ansel-hsiao-isd2-112.jpg',
+        p_img[5] = 'https://i.pinimg.com/originals/b6/73/cb/b673cbed7c61d93ac74d1949cc702590.png',
+        p_img[9] = 'https://wikiimg.tojsiabtv.com/wikipedia/en/f/f9/Death_star1.png',
+        p_img[10] = 'https://uploads.jovemnerd.com.br/wp-content/uploads/2018/01/Millenium-Falcon.jpg',
+        p_img[11] = 'https://media.contentapi.ea.com/content/dam/star-wars-battlefront-2/images/2019/08/swbf2-refresh-hero-medium-vehicles-page-btl-b-y-wing-7x2-xl.jpg.adapt.crop16x9.320w.jpg',
+        p_img[12] = 'https://sm.ign.com/ign_br/screenshot/default/28de44a9c53ad7377b7691fb3102104b_zg5k.jpg',
+        p_img[13] = 'http://pm1.narvii.com/7640/f9116754fce9d64fce61102ea5a53e3b8f4838a5r1-679-452v2_00.jpg',
+        p_img[15] = 'http://images-cdn.fantasyflightgames.com/filer_public/53/cc/53cc1c2a-c775-4ef0-a514-c6b5693fa22d/swm20_preview1.jpg',
+        p_img[17] = 'https://www.imtoys.com.br/wp-content/uploads/2019/03/af_rebel-transport1.jpg',
+        p_img[21] = 'https://p.turbosquid.com/ts-thumb/92/7i8epw/jv/presentation5/png/1642008135/600x600/fit_q87/cf221e30f10afa1797c6bf39459b43e2b025fbe4/presentation5.jpg',
+        p_img[22] = 'https://i.pinimg.com/550x/b9/b5/8b/b9b58b9e9e485599097531e53613293f.jpg',
+        p_img[23] = 'http://media.moddb.com/images/downloads/1/131/130947/Nebulon-B.jpg',
+        p_img[27] = 'https://i.pinimg.com/736x/b2/5a/33/b25a33c4dffb4952ca85d752f533e2c3.jpg',
+        p_img[28] = 'https://upload.wikimedia.org/wikipedia/en/f/f2/A-wing_production_model.jpg',
+        p_img[29] = 'https://i.pinimg.com/originals/5c/1c/26/5c1c2651ddcddccf4db8d26ad3d80867.jpg',
+        p_img[31] = 'https://i.pinimg.com/originals/0b/86/42/0b8642e18b88ca5a54086d0a7a015355.jpg',
+        p_img[32] = 'https://live.staticflickr.com/8196/8082738539_8cee4f8d5c_b.jpg',
+        p_img[39] = 'https://starwarsblog.starwars.com/wp-content/uploads/2022/02/star-wars-ships-naboo-n-1-starfighter-06.jpg',
+        p_img[40] = 'https://pm1.narvii.com/6056/1752b0faf4fa3c4ecdf0f25adab05035fcdd43f0_hq.jpg',
+        p_img[41] = 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/ed4309a9-2ad5-4a07-a028-739b166123e4/dd7cgpt-34a74b39-d351-4262-b4ed-054fc788a8b9.jpg',
+        p_img[43] = 'https://pbs.twimg.com/media/EbGf4JKWkAwIAfc.jpg',
+        p_img[47] = 'https://i.pinimg.com/originals/9f/14/b2/9f14b2ca537058c9d984b93146e18c61.jpg',
+        p_img[48] = 'https://static.turbosquid.com/Preview/2020/11/09__16_51_17/NEWProduct1.jpg5C1ED742-0C9C-4F67-AE74-C25C1B27A1EFLarge.jpg',
+        p_img[49] = 'https://media.sketchfab.com/models/61905ccafc5b46f1ad776168a5078481/thumbnails/3411bd87e9214058a4299758a526ce31/6938a2ea5ebb4695a2897b85d331f3f0.jpeg',
+        p_img[52] = 'https://i.pinimg.com/736x/e3/b8/86/e3b8867430bec16b4257b1e081477664.jpg',
+        p_img[58] = 'https://i.ebayimg.com/images/g/KkIAAOSw-jhUF5cw/s-l500.jpg',
+        p_img[59] = 'https://i.pinimg.com/originals/6a/9f/95/6a9f95f27e4510c3deea9dfea72a531f.jpg',
+        p_img[61] = 'https://i.pinimg.com/736x/e2/ee/f7/e2eef736ae40d407696a5f47ba65ade3--gulfstream-v-wood.jpg',
+        p_img[63] = 'https://cdn.shopify.com/s/files/1/1598/0683/products/MouldKing21005RepublicAttackCruiserFront_1024x1024.jpg',
+        p_img[64] = 'https://pm1.narvii.com/6028/24022bf286c463221bc7179deb2f7f313e1188d9_hq.jpg',
+        p_img[65] = 'https://www.belloflostsouls.net/wp-content/uploads/2022/05/jedi-interceptor-2.jpg',
+        p_img[66] = 'https://clonetroopers02.files.wordpress.com/2015/09/03445193282f1b95936f0573b3.jpeg',
+        p_img[68] = 'https://i.pinimg.com/736x/69/a6/42/69a642d683e1ca526349530a267cd2c7--cutaway-star-wars-rpg.jpg',
+        p_img[74] = 'https://i.pinimg.com/originals/bf/b3/bd/bfb3bd3b211349adb702f27448df43a2.png',
+        p_img[75] = 'https://i.pinimg.com/originals/4d/11/de/4d11dee7345925bd37d1d809d448a136.jpg';
+
+
+
+         const  listpeople = (listpeople) => {
+                 const selectPeople = document.createElement("select");
+         }
+ 
+        function addSelect() {
+            option = new Option('select',0 );
+            peoples.options[peoples.options.length] = option;
+            for(people in  this.p_arr) {
+                option = new Option(p_arr[people],people );
+                peoples.options[peoples.options.length] = option;
+            }
+        }
+
+
+        addSelect();   
+        const showPeople = (people) => {
+                const peopleDiv = document.querySelector("#people-info-box");
+
+                peopleDiv.removeChild(peopleDiv.firstChild);
+                const tableRowEle = document.createElement("table");
+
+                tableRowEle.innerHTML = `
+                        <tr><td><strong> Name:</strong> </td><td>${people.name}</td></tr>    
+                        <tr><td><strong> Model:</strong> </td><td>${people.model}</td></tr>    
+                        <tr><td><strong> MGLT:</strong> </td><td>${people.MGLT}</td></tr>    
+                        <tr><td><strong> Capacity:</strong> </td><td>${people.cargo_capacity}</td></tr>    
+                        <tr><td><strong> Cost(credit):</strong> </td><td>${people.cost_in_credits}</td></tr>    
+                        <tr><td><strong> Atmosfere Speed:</strong> </td><td>${people.max_atmosphering_speed}</td></tr>    
+                        <tr><td><strong> Passengers:</strong> </td><td>${people.passenger}</td></tr>    
+                        <tr><td><strong> Starship Class:</strong> </td><td>${people.starship_class}</td></tr>    
+                    `;
+                    peopleDiv.append(tableRowEle);
+
+
+             };
+
+
+        function chama(id){
+            var img = document.querySelector("#imgSpaceship");
+                img.setAttribute('src', this.p_img[id]);
+           
+            getPeople(id);
+        }
+
+
+        function getPeople(id) {
+           console.log(people); 
+            let starwarsAPI = "https://swapi.dev/api/starships/"+id;
+
+            fetch(starwarsAPI )
+            .then((response) => response.json())
+            .then((people) => showPeople(people))
+           ;
+             console.log(people);
+        }    
+
+        const  showShip = (ship) => {
+                 const selectShip = document.createElement("select");
+         }
+ship = [];
+        function getlistship() {
+           
+            for (let i=1; i<= 36; i++){
+                let starwarsAPI = "https://swapi.dev/api/starships/"+i;
+
+                fetch(starwarsAPI )
+                .then((response) => response.json())
+                .then((ship) => showShip(ship));
+                console.log(ship);
+            }
+             console.log(ship);
+        }    
+
+        getlistship();
+
+
+    </script>
+    
+</body>
+</html>
