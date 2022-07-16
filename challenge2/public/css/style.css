@@ -1,0 +1,129 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+@font-face {
+  font-family: Starjedy;
+  src: local(Starjedy),url("./star-jedy/starjedy.ttf");
+}
+
+@font-face {
+  font-family: Starjhol;
+  src: local(Starjhol),url("./star-jedy/starjhol.ttf");
+}
+@font-face {
+  font-family: Starjout;
+  src: local(Starjout),url("./star-jedy/starjout.ttf");
+}
+@font-face {
+  font-family: STJEDISE;
+  src: local(STJEDISE),url("./star-jedy/STJEDISE.ttf");
+}
+
+
+body{
+  background-image: url("../img/outros/nasa-galaxia-2.png") ;
+  
+}
+
+content{
+  width: 80%;
+  height: auto;
+  align-items: center;
+  margin-left: 5em;
+}
+
+h1{
+  color:goldenrod;
+  font-family:  starjedy,starjhol;
+  text-align: center;
+  font-size: 100px;
+  margin-top: 5%;
+  font-weight: bold;;
+}
+
+.h-card {
+  width: 337px;
+  color:goldenrod;
+  text-align: center;
+  margin: 10em;
+}
+
+.h-card2 {
+  width: 400px;
+  color:goldenrod;
+  text-align: center;
+  margin: 10em;
+}
+
+
+.h-card-cont {
+  border-top: 3px solid goldenrod;
+  border-left: 4px solid goldenrod; 
+  border-right: 10px solid goldenrod; 
+  border-bottom: 10px solid goldenrod; 
+  height: 100px; 
+  padding: 5px 0;
+  border-radius: 25px; 
+  
+}
+
+
+.h-card-text {
+  width: 600px;
+  height: 450px;
+  color:goldenrod;
+  text-align: center;
+ 
+}
+
+.h-card-cont-text {
+  border-top: 3px solid goldenrod;
+  border-left: 4px solid goldenrod; 
+  border-right: 10px solid goldenrod; 
+  border-bottom: 10px solid goldenrod; 
+  height: 500px; 
+  padding: 5px 0;
+  border-radius: 25px; 
+  background-color: black;
+  
+}
+
+.h-col-1 {
+  display:inline-flex;
+
+  
+}
+.marg-l-10 {
+  margin-left: 10em;
+}
+
+.marg-t-5 {
+  margin-top: 5em;
+}
+
+.h-container {
+
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  
+ 
+}
+
+.flex-item {
+  order: 0; 
+}
+
+p {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
