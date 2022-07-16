@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Block 2 Challenge Proposals </title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+ 
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/floating-labels/">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      
+        <link rel="stylesheet" href="./css/style.css">
+      
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+
+        <style>
+            /* Styling the button */
+       .h-btn {
+           cursor: pointer;
+           border-top: 3px solid goldenrod;
+           border-left: 4px solid goldenrod; 
+           border-right: 10px solid goldenrod; 
+           border-bottom: 10px solid goldenrod; 
+           border-radius: 25px; 
+           background-color: transparent;
+           padding: 5px 0;
+           height: 60px;
+           width: 100%;
+           color: #fae103;
+           font-size: 2.5em;
+           box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+           margin-left: 2rem;
+       }
+       .spaces {
+           margin-left: 2rem;
+       }
+
+       .pequeno {
+           margin-top: 30px;
+           width: 150px;
+       }
+       </style>    
+
+    </head>
+    <body>
+
+        <div class="container ">
+        
+            <div>
+                <h1>Starwars Info</h1>
+            </div>
+            <div class="text-center mb-4">
+                <img class="mb-4" src="./img/outros/shipspace.png" alt="Ship Space" width="150" height="150">
+            </div>
+            
+            <h2 style="color:goldenrod; text-align: center; font-size:2.5em;margin: 1em;"><strong>PERSONAGE</strong></h2>
+        
+
+            <div class="row justify-content-center  ">  
+                <h2 style="color:goldenrod">Chose a personage:</h2>
+                <div class="col-md-12 row justify-content-center" >
+                    <select class="col-md-4" name="peoples" id="peoples">
+                    </select> 
+                </div> 
+                    
+
+                <div class="col-md-6">
+                    <div class="h-card">
+                        <div class="h-card-top">
+                        </div>
+                        <div class="h-card-cont"  style="height:600px;">
+                            <img id="imgPersonage" name="imgPersonage" src="" width="200px">
+                            <p>Informations</p>
+                            <div class="col-md-12" id="people-info-box" style="font-size: 1.4em; color:darkgoldenrod; margin-left: 1.5em; text-align:left;">
+                            </div>
+                        </div>
+                    </div>        
+                </div>
+            </div>
+
+            <div class="spaces pequeno" style="font-size: 10px !important;" >
+                <button class="h-btn" onclick="history.go(-1);">Go Back</button>
+            </div>
+        
+        </div>  
+    
+    <script>
+
+        $('#peoples').change(function(){
+            let id =  $('#peoples').val();
+            chama(id);
+        });
+
+       var p_arr = [];
+        p_arr[0] = 'Select',
+        p_arr[1] = 'Luke Skywalker',
+        p_arr[2] = 'C-3PO',
+        p_arr[3] = 'R2-D2',
+        p_arr[4] = 'Darth Vader',
+        p_arr[5] = 'Leia Organa',
+        p_arr[6] = 'Owen Lars',
+        p_arr[7] = 'Beru Whitesun lars',
+        p_arr[8] = 'R5-D4',
+        p_arr[9] = 'Biggs Darklighter',
+        p_arr[10] = 'Obi-Wan Kenobi',
+        p_arr[11] = 'Anakin Skywalker',
+        p_arr[12] = 'Wilhuff Tarkin',
+        p_arr[13] = 'Chewbacca',
+        p_arr[14] = 'Han Solo',
+        p_arr[15] = 'Greedo',
+        p_arr[16] = 'Jabba Desilijic Tiure',
+        p_arr[18] = 'Wedge Antilles',
+        p_arr[19] = 'Jek Tono Porkins',
+        p_arr[20] = 'Yoda',
+        p_arr[21] = 'Palpatine',
+        p_arr[22] = 'Boba Fett',
+        p_arr[23] = 'IG-88',
+        p_arr[24] = 'Bossk',
+        p_arr[25] = 'Lando Calrissian',
+        p_arr[26] = 'Lobot',
+        p_arr[27] = 'Ackbar',
+        p_arr[28] = 'Mon Mothma',
+        p_arr[29] = 'Arvel Crynyd',
+        p_arr[30] = 'Wicket Systri Warrick',
+        p_arr[31] = 'Nien Nunb',
+        p_arr[32] = 'Qui-Gon Jinn',
+        p_arr[33] = 'Nute Gunray',
+        p_arr[34] = 'Finis Valorum',
+        p_arr[35] = 'Padmé Amidala',
+        p_arr[36] = 'Jar Jar Binks',
+        p_arr[37] = 'Roos Tarpals',
+        p_arr[38] = 'Rugor Nass',
+        p_arr[39] = 'Ric Olié',
+        p_arr[40] = 'Watto',
+        p_arr[41] = 'Sebulba',
+        p_arr[42] = 'Quarsh Panaka',
+        p_arr[43] = 'Shmi Skywalker',
+        p_arr[44] = 'Darth Maul',
+        p_arr[45] = 'Bib Fortuna',
+        p_arr[46] = 'Ayla Secura',
+        p_arr[47] = 'Ratts Tyerel',
+        p_arr[48] = 'Dud Bolt',
+        p_arr[49] = 'Gasgano',
+        p_arr[50] = 'Ben Quadinaros',
+        p_arr[51] = 'Mace Windu',
+        p_arr[52] = 'Ki-Adi-Mundi',
+        p_arr[53] = 'Kit Fisto',
+        p_arr[54] = 'Eeth Koth',
+        p_arr[55] = 'Adi Gallia',
+        p_arr[56] = 'Saesee Tii',
+        p_arr[57] = 'Yarael Poof',
+        p_arr[58] = 'Plo Koon',
+        p_arr[59] = 'Mas Amedda',
+        p_arr[60] = 'Gregar Typho',
+        p_arr[61] = 'Cordé',
+        p_arr[62] = 'Cliegg Lars',
+        p_arr[63] = 'Poggle the Lesserr',
+        p_arr[64] = 'Luminara Unduli',
+        p_arr[65] = 'Barriss Offee',
+        p_arr[66] = 'Dormé',
+        p_arr[67] = 'Dooku',
+        p_arr[68] = 'Bail Prestor Organa',
+        p_arr[69] = 'Jango Fett',
+        p_arr[70] = 'Zam Wesell',
+        p_arr[71] = 'Dexter Jettster',
+        p_arr[72] = 'Lama Su',
+        p_arr[73] = 'Taun We',
+        p_arr[74] = 'Jocasta Nu',
+        p_arr[75] = 'R4-P17',
+        p_arr[76] = 'Wat Tambor',
+        p_arr[77] = 'San Hill',
+        p_arr[78] = 'Shaak Ti',
+        p_arr[79] = 'Grievous',
+        p_arr[80] = 'Tarfful',
+        p_arr[81] = 'Raymus Antilles',
+        p_arr[82] = 'Sly Moore',
+        p_arr[83] = 'Tion Medon';
+
+   var p_img = [];
+        p_img[0] = '',
+        p_img[1] = 'https://ovicio.com.br/wp-content/uploads/2022/02/20220206-ovicio-livro-boba-fett-star-wars-luke-555x555.jpg',
+        p_img[2] = 'https://pm1.narvii.com/6326/c8a5110c5952e239c9b2dea18f5fefaa0af38afe_hq.jpg',
+        p_img[3] = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdCXcJPEm_HW1dVFucBHn52OEQ_A68l3XiUw&usqp=CAU',
+        p_img[4] = 'https://preview.redd.it/yriap9fnk6u71.jpg?auto=webp&s=1a653e5e54c5ca4ff9d4342fa862a7a12693b18b',
+        p_img[5] = 'https://static.wixstatic.com/media/d6a388_8b69a8ea88a7402890b66ae00414f054~mv2.jpg/v1/fill/w_736,h_1083,al_c,q_90/d6a388_8b69a8ea88a7402890b66ae00414f054~mv2.jpg',
+        p_img[6] = 'http://enclavedaforca.com.br/wp-content/uploads/2019/10/Owen-OP-e1571678487868.jpg',
+        p_img[7] = 'https://i.pinimg.com/736x/cd/55/1a/cd551a080b436e9b2a6c618321224de8--lars-garden.jpg',
+        p_img[8] = 'https://static3.tcdn.com.br/img/img_prod/460977/r5_d4_star_wars_sideshow_2855_3_20160823161637.jpg',
+        p_img[9] = 'https://comicvine.gamespot.com/a/uploads/scale_medium/14/145984/4902632-8136336329-biggs.jpg',
+        p_img[10] = 'https://entretenimento.plu7.com/wp-content/uploads/2022/06/Recapitulacao-do-final-de-Obi-Wan-Kenobi-houve-um-confronto-final.jpeg',
+        p_img[11] = 'https://i.pinimg.com/474x/12/cc/fc/12ccfc570a8fdb2fb630ce0a20484120.jpg',
+        p_img[12] = 'https://upload.wikimedia.org/wikipedia/en/5/5a/Grand_Moff_Tarkin.png',
+        p_img[13] = 'https://st.depositphotos.com/1814084/1671/i/450/depositphotos_16717145-stock-photo-33rd-afi-life-achievement-award.jpg',
+        p_img[14] = 'https://upload.wikimedia.org/wikipedia/pt/f/f4/HanSolo.jpg',
+        p_img[15] = 'https://pbs.twimg.com/profile_images/719705738763841537/sdrofuoV_400x400.jpg',
+        p_img[16] = 'https://i.pinimg.com/originals/f8/50/01/f850016f7698afa8894bcdd4c7bb369b.jpg',
+        p_img[18] = 'https://i.pinimg.com/originals/8f/4e/9f/8f4e9f44b26952a09254c1aff2a969d5.jpg',
+        p_img[19] = 'https://pbs.twimg.com/profile_images/1213850729351434240/kpgYQQ5t_400x400.jpg',
+        p_img[20] = 'https://upload.wikimedia.org/wikipedia/pt/4/45/Yoda.jpg',
+        p_img[21] = 'https://sffgazette.com/cdn-cgi/image/fit=cover,width=670,height=377,quality=50/images/articles/banners/1171.jpg',
+        p_img[22] = 'https://www.rbsdirect.com.br/filestore/6/6/2/3/2/6/1_b38b155608854df/1623266_f2a5df3019d609f.jpg?w=700',
+        p_img[23] = 'https://icollect.com.br/Content/Images/Uploaded/ItemImages/22365/4df29366-7d96-49ef-b031-9ce475459c77.jpg',
+        p_img[24] = 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/9001c988212145.5dcf26cd4168b.jpg',
+        p_img[25] = 'https://sm.ign.com/ign_pt/news/s/star-wars-/star-wars-lando-calrissian-series-in-development-at-disney_zs4d.jpg',
+        p_img[26] = 'https://lafuerzanoticias.files.wordpress.com/2018/04/lobot.png?w=720',
+        p_img[27] = 'https://pyxis.nymag.com/v1/imgs/5fd/b4c/08e5eaa592aaf4c45ca001b680bb827ae7-13-ackbar.rsquare.w700.jpg',
+        p_img[28] = 'https://i.pinimg.com/474x/b2/2b/1c/b22b1c53f80bf9f8e7bf45cc4b571536.jpg',
+        p_img[29] = 'http://www.jedipedia.net/w/images/d/de/Arvel-crynyd.jpg',
+        p_img[30] = 'https://rpggamer.org/uploaded_images/Deej.jpg',
+        p_img[31] = 'https://stringfixer.com/files/253835385.jpg',
+        p_img[32] = 'https://observatoriodeseries.uol.com.br/wp-content/uploads/2021/01/star-wars-2.jpg',
+        p_img[33] = 'http://pm1.narvii.com/6167/94d1671be328fd7757f6ec2f906f76203965d403_00.jpg',
+        p_img[34] = 'https://pbs.twimg.com/profile_images/1273714675071561734/LOWwnK9D_400x400.jpg',
+        p_img[35] = 'http://pm1.narvii.com/6434/a6e423fc8960de5c0a0341c18a613e97a2504ba2_00.jpg',
+        p_img[36] = 'https://pbs.twimg.com/profile_images/1584386259/232980-jar_jar_binks_large_400x400.jpeg',
+        p_img[37] = 'https://64.media.tumblr.com/8c41b7b6b36fdaa875675b21c2653ddc/tumblr_o27q3hohnU1u434ngo4_250sq.jpg',
+        p_img[38] = 'https://i.ytimg.com/vi/SL5qHl6KizQ/mqdefault.jpg',
+        p_img[39] = 'https://www.jeditemplearchives.com/galleries/2012/Review_RicOlieDTF/Review_RicOlieDTF_stillA.JPG',
+        p_img[40] = 'https://images.saymedia-content.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTc0NDcyNjkzMzgxMzQyODU0/top-terrible-things-about-watto-from-star-wars.jpg',
+        p_img[41] = 'https://i.pinimg.com/originals/6b/8b/0c/6b8b0cb6dbd77452dbd3353089db8c81.jpg',
+        p_img[42] = 'https://pbs.twimg.com/profile_images/1476061167848099842/P4TaEt3q_400x400.jpg',
+        p_img[43] = 'https://i.pinimg.com/550x/4f/5f/06/4f5f069baf4d7fea1314043f0f69ff86.jpg',
+        p_img[44] = 'https://sm.ign.com/t/ign_br/news/d/darth-maul/darth-maul-was-never-going-to-be-in-obi-wan-kenobi_17bx.h720.jpg',
+        p_img[45] = 'https://upload.wikimedia.org/wikipedia/en/6/65/Bib_Fortuna_%28screenshot%29.jpg',
+        p_img[46] = 'https://i.pinimg.com/originals/9a/8c/0b/9a8c0b254c67e2c32b5094de899c2d3e.jpg',
+        p_img[47] = 'https://44.media.tumblr.com/d89b94451ed93f66b9e89d6512806673/tumblr_ovace05OmJ1tpkoamo6_r1_500.gif',
+        p_img[48] = 'https://live.staticflickr.com/7212/7187093907_e61d3d9aef_b.jpg',
+        p_img[49] = 'https://comicvine.gamespot.com/a/uploads/square_medium/8/85087/2368553-gasgano2.jpg',
+        p_img[50] = 'https://i.pinimg.com/236x/ff/8b/c4/ff8bc4ae7e2f2861d623e626207a91bd--ben-star-wars.jpg',
+        p_img[51] = 'https://kanto.legiaodosherois.com.br/w1200-h628-cfill/wp-content/uploads/2022/06/legiao_sKolVb0NvgPW.jpg.jpeg',
+        p_img[52] = 'https://pm1.narvii.com/6569/698396f4ed7687930189783ede1c14e299042d39_hq.jpg',
+        p_img[53] = 'https://epipoca.com.br/wp-content/uploads/2021/06/Kit-Fisto-em-Star-Wars-Reproducao-1200x900.jpeg',
+        p_img[54] = 'http://pm1.narvii.com/6332/c1e3b21025522683764f16a5017bf496d48c9da6_00.jpg',
+        p_img[55] = 'http://www.sw-omens.org/images/thumb/7/73/Adigallia.jpg/300px-Adigallia.jpg',
+        p_img[56] = 'http://pm1.narvii.com/7962/7aec9c143a251f0b8e189dedbfb841c2ecaf91a6r1-480-360v2_00.jpg',
+        p_img[57] = 'https://comicvine.gamespot.com/a/uploads/scale_small/0/5904/205844-168553-yarael-poof.jpg',
+        p_img[58] = 'https://theforceuniverse.com/wp-content/uploads/2022/06/plo-koon.png',
+        p_img[59] = 'https://i.pinimg.com/originals/4e/3b/a6/4e3ba6f060d9d5bf486d528c722bb6fe.jpg',
+        p_img[60] = 'https://64.media.tumblr.com/1ac84184ec783c456dfda93596eef913/b60d797232913c38-8d/s540x810/bc3d15a3fccad99ddf818472699907bc869d2e68.jpg',
+        p_img[61] = 'https://i.ytimg.com/vi/RBHGHeAaMNI/maxresdefault.jpg',
+        p_img[62] = 'http://3.bp.blogspot.com/-aiTPAKODfJo/VjjDdCKgX0I/AAAAAAAAH8o/EBldDdJM3m4/s1600/Cliegg.jpg',
+        p_img[63] = 'https://static.wixstatic.com/media/d6a388_648a0e89ba2346ca905b13cb532dc436~mv2.jpg/v1/fill/w_1000,h_800,al_c,q_90,usm_0.66_1.00_0.01/d6a388_648a0e89ba2346ca905b13cb532dc436~mv2.jpg',
+        p_img[64] = 'https://conversamos.files.wordpress.com/2013/08/luminara-unduli.jpg',
+        p_img[65] = 'https://pm1.narvii.com/6461/5a4f5d78b7344669b559df021cd2c3043e4086c6_hq.jpg',
+        p_img[66] = 'http://pm1.narvii.com/5979/0c62b129ee573e150da9d27b445c15e1315ca6d3_00.jpg',
+        p_img[67] = 'https://pm1.narvii.com/6684/6ddf7f39d196d8adcadc8ae9b904613a83f74464_hq.jpg',
+        p_img[68] = 'https://www.themarysue.com/wp-content/uploads/2016/12/bail-organa.jpeg',
+        p_img[69] = 'https://sm.ign.com/ign_br/screenshot/default/blob_1kfq.png',
+        p_img[70] = 'https://i.pinimg.com/736x/8b/4a/f2/8b4af23eb480e6b7b00507103bfab694.jpg',
+        p_img[71] = 'https://pbs.twimg.com/media/EaJEZjWXsAEk2Zk.jpg:large',
+        p_img[72] = 'https://farm8.staticflickr.com/7032/13765287514_70068e3971.jpg',
+        p_img[73] = 'https://rpggamer.org/uploaded_images/TaunWeKaminoan.jpg',
+        p_img[74] = 'http://pm1.narvii.com/6455/886a64e6239aabf98ba89909659d323026323b17_00.jpg',
+        p_img[75] = 'https://i.pinimg.com/originals/36/55/55/365555cfa7e73ec2a9db05cde34aea79.png',
+        p_img[76] = 'https://i.pinimg.com/originals/ff/02/ed/ff02eda1686d23d053773f122827739b.jpg',
+        p_img[77] = 'https://starwarsreadingorder.com/images/characters/san_hill.jpg',
+        p_img[78] = 'https://live.staticflickr.com/7304/9303195193_76aac44e8d_b.jpg',
+        p_img[79] = 'https://i.ytimg.com/vi/BjkEPhZTcMY/maxresdefault.jpg',
+        p_img[80] = 'https://i1.sndcdn.com/avatars-sMwIkMvMzgikieDf-MzbzaA-t500x500.jpg',
+        p_img[81] = 'https://i.imgur.com/dD80ipL.png',
+        p_img[82] = 'https://qph.fs.quoracdn.net/main-qimg-33d1d9ed857c85da5a5f3ccb8f105e68-pjlq',
+        p_img[83] = 'https://i.pinimg.com/474x/53/9e/65/539e652facea73504bfc1fd2812a8d94.jpg';
+
+
+
+         const  listpeople = (listpeople) => {
+                 const selectPeople = document.createElement("select");
+         }
+ 
+        function addSelect() {
+            option = new Option('select',0 );
+            peoples.options[peoples.options.length] = option;
+            for(people in  this.p_arr) {
+                option = new Option(p_arr[people],people );
+                peoples.options[peoples.options.length] = option;
+            }
+        }
+        addSelect();   
+        const showPeople = (people) => {
+                const peopleDiv = document.querySelector("#people-info-box");
+
+                peopleDiv.removeChild(peopleDiv.firstChild);
+                const tableRowEle = document.createElement("table");
+
+                tableRowEle.innerHTML = `
+                        <tr><td><strong> Name:</strong> </td><td>${people.name}</td></tr>    
+                        <tr><td><strong> Height:</strong> </td><td>${people.height}</td></tr>    
+                        <tr><td><strong> Mass:</strong> </td><td>${people.mass}</td></tr>    
+                        <tr><td><strong> Hair Color:</strong> </td><td>${people.hair_color}</td></tr>    
+                        <tr><td><strong> Skin Color:</strong> </td><td>${people.skin_color}</td></tr>    
+                        <tr><td><strong> Eye Color:</strong> </td><td>${people.eye_color}</td></tr>    
+                        <tr><td><strong> Birth Year:</strong> </td><td>${people.birth_year}</td></tr>    
+                        <tr><td><strong> Gender:</strong> </td><td>${people.gender}</td></tr>    
+                    `;
+                    peopleDiv.append(tableRowEle);
+
+
+             };
+
+
+        function chama(id){
+            var img = document.querySelector("#imgPersonage");
+                img.setAttribute('src', this.p_img[id]);
+           
+            getPeople(id);
+        }
+
+
+        function getPeople(id) {
+            
+            let starwarsAPI = "https://swapi.dev/api/people/"+id;
+
+            fetch(starwarsAPI )
+            .then((response) => response.json())
+            .then((people) => showPeople(people))
+           ;
+             
+        }    
+    </script>
+    
+</body>
+</html>
