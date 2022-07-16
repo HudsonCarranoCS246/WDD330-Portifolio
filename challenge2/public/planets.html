@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Block 2 Challenge Proposals </title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+ 
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/floating-labels/">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      
+        <link rel="stylesheet" href="./css/style.css">
+      
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+
+        <style>
+            /* Styling the button */
+       .h-btn {
+           cursor: pointer;
+           border-top: 3px solid goldenrod;
+           border-left: 4px solid goldenrod; 
+           border-right: 10px solid goldenrod; 
+           border-bottom: 10px solid goldenrod; 
+           border-radius: 25px; 
+           background-color: transparent;
+           padding: 5px 0;
+           height: 60px;
+           width: 100%;
+           color: #fae103;
+           font-size: 2.5em;
+           box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+           margin-left: 2rem;
+       }
+       .spaces {
+           margin-left: 2rem;
+       }
+
+       .pequeno {
+           margin-top: 30px;
+           width: 150px;
+       }
+       </style>    
+
+    </head>
+    <body>
+
+        <div class="container ">
+        
+            <div>
+                <h1>Starwars Info</h1>
+            </div>
+            <div class="text-center mb-4">
+                <img class="mb-4" src="./img/outros/shipspace.png" alt="Ship Space" width="150" height="150">
+            </div>
+            
+            <h2 style="color:goldenrod; text-align: center; font-size:2.5em;margin: 1em;"><strong>PLANETS</strong></h2>
+        
+
+            <div class="row justify-content-center  ">  
+                <h2 style="color:goldenrod">Chose a planet:</h2>
+                <div class="col-md-12 row justify-content-center" >
+                    <select class="col-md-4" name="peoples" id="peoples">
+                    </select> 
+                </div> 
+                    
+
+                <div class="col-md-6">
+                    <div class="h-card2">
+                        <div class="h-card-top">
+                        </div>
+                        <div class="h-card-cont"  style="height:700px;">
+                            <img id="imgPersonage" name="imgPersonage" src="" width="200px">
+                            <p>Informations</p>
+                            <div class="col-md-12" id="people-info-box" style="font-size: 1.4em; color:darkgoldenrod; margin-left: 1.5em; text-align:left;">
+                            </div>
+                        </div>
+                    </div>        
+                </div>
+            </div>
+
+            <div class="spaces pequeno" style="font-size: 10px !important;" >
+                <button class="h-btn" onclick="history.go(-1);">Go Back</button>
+            </div>
+        
+        </div>  
+    
+    <script>
+
+        $('#peoples').change(function(){
+            let id =  $('#peoples').val();
+            chama(id);
+        });
+
+       var p_arr = [];
+        p_arr[0] = 'Select',
+        p_arr[1] = 'Tatooine',
+        p_arr[2] = 'Alderaan',
+        p_arr[3] = 'Yavin IV',
+        p_arr[4] = 'Hoth',
+        p_arr[5] = 'Dagobah',
+        p_arr[6] = 'Bespin',
+        p_arr[7] = 'Endor',
+        p_arr[8] = 'Naboo',
+        p_arr[9] = 'Coruscant',
+        p_arr[10] = 'Kamino',
+        p_arr[11] = 'Geonosis',
+        p_arr[12] = 'Utapau',
+        p_arr[13] = 'Mustafar',
+        p_arr[14] = 'Kashyyyk',
+        p_arr[15] = 'Polis Massa',
+        p_arr[16] = 'Mygeeto',
+        p_arr[17] = 'Felucia',
+        p_arr[18] = 'Cato Neimoidia',
+        p_arr[19] = 'Saleucami',
+        p_arr[20] = 'Stewjon',
+        p_arr[21] = 'Eriadu',
+        p_arr[22] = 'Corellia',
+        p_arr[23] = 'Rodia',
+        p_arr[24] = 'Nal Hutta',
+        p_arr[25] = 'Dantooine',
+        p_arr[26] = 'Bestine IV',
+        p_arr[27] = 'Ord Mantell',
+        p_arr[28] = 'unknown',
+        p_arr[29] = 'Trandosha',
+        p_arr[30] = 'Socorro',
+        p_arr[31] = 'Mon Cala',
+        p_arr[32] = 'Chandrila',
+        p_arr[33] = 'Sullust',
+        p_arr[34] = 'Toydaria',
+        p_arr[35] = 'Malastare',
+        p_arr[36] = 'Dathomir',
+        p_arr[37] = 'Ryloth',
+        p_arr[38] = 'Aleen Minor',
+        p_arr[39] = 'Vulpter',
+        p_arr[40] = 'Troiken',
+        p_arr[41] = 'Tund',
+        p_arr[42] = 'Haruun Kal',
+        p_arr[43] = 'Cerea',
+        p_arr[44] = 'Glee Anselm',
+        p_arr[45] = 'Iridonia',
+        p_arr[46] = 'Tholoth',
+        p_arr[47] = 'Iktotch',
+        p_arr[48] = 'Quermia',
+        p_arr[49] = 'Dorin',
+        p_arr[50] = 'Champala',
+        p_arr[51] = 'Mirial',
+        p_arr[52] = 'Serenno',
+        p_arr[53] = 'Concord Dawn',
+        p_arr[54] = 'Zolan',
+        p_arr[55] = 'Ojom',
+        p_arr[56] = 'Skako',
+        p_arr[57] = 'Muunilinst',
+        p_arr[58] = 'Shili',
+        p_arr[59] = 'Mas Amedda',
+        p_arr[60] = 'Umbara';
+        
+
+   var p_img = [];
+        p_img[0] = '',
+        p_img[1] = 'https://i.pinimg.com/originals/6c/d8/9c/6cd89c7ce77822eebc8c8b7edf1c142b.jpg',
+        p_img[2] = 'https://www.slashfilm.com/img/gallery/obi-wan-kenobi-finally-gives-a-famous-star-wars-locale-time-in-the-spotlight/a-peaceful-planet-1653694830.jpg',
+        p_img[3] = 'https://live.staticflickr.com/4521/38656629792_e7b21a070c_b.jpg',
+        p_img[4] = 'https://i.pinimg.com/originals/e7/57/52/e75752a50366dba243b6601aa8b2fc61.jpg',
+        p_img[5] = 'https://i1.sndcdn.com/artworks-000137813732-tqkewc-t500x500.jpg',
+        p_img[6] = 'https://c.wallhere.com/photos/09/7f/Boba_Fett_Star_Wars_Villains_Bespin_Millennium_Falcon_artwork_science_fiction_Star_Wars-1558177.jpg!d',
+        p_img[7] = 'https://i0.wp.com/sociedadejedi.com.br/wp-content/uploads/2018/09/endor.jpeg',
+        p_img[8] = 'https://i.pinimg.com/736x/9a/32/46/9a324616af4cdbdedad228e699021c58.jpg',
+        p_img[9] = 'https://i0.wp.com/sociedadejedi.com.br/wp-content/uploads/2021/02/star-wars-coruscant-galactic-city.jpg',
+        p_img[10] = '',
+        p_img[11] = '',
+        p_img[12] = '',
+        p_img[13] = '',
+        p_img[14] = '',
+        p_img[15] = '',
+        p_img[16] = '',
+        p_img[18] = '',
+        p_img[19] = '',
+        p_img[20] = '',
+        p_img[21] = '',
+        p_img[22] = '',
+        p_img[23] = '',
+        p_img[24] = '',
+        p_img[25] = '',
+        p_img[26] = '',
+        p_img[27] = '',
+        p_img[28] = '',
+        p_img[29] = '',
+        p_img[30] = '',
+        p_img[31] = '',
+        p_img[32] = '',
+        p_img[33] = '',
+        p_img[34] = '',
+        p_img[35] = '',
+        p_img[36] = '',
+        p_img[37] = '',
+        p_img[38] = '',
+        p_img[39] = '',
+        p_img[40] = '',
+        p_img[41] = '',
+        p_img[42] = '',
+        p_img[43] = '',
+        p_img[44] = '',
+        p_img[45] = '',
+        p_img[46] = '',
+        p_img[47] = '',
+        p_img[48] = '',
+        p_img[49] = '',
+        p_img[50] = '',
+        p_img[51] = '',
+        p_img[52] = '',
+        p_img[53] = '',
+        p_img[54] = '',
+        p_img[55] = '',
+        p_img[56] = '',
+        p_img[57] = '',
+        p_img[58] = '',
+        p_img[59] = '',
+        p_img[60] = '';
+
+
+
+         const  listpeople = (listpeople) => {
+                 const selectPeople = document.createElement("select");
+         }
+ 
+        function addSelect() {
+            option = new Option('select',0 );
+            peoples.options[peoples.options.length] = option;
+            for(people in  this.p_arr) {
+                option = new Option(p_arr[people],people );
+                peoples.options[peoples.options.length] = option;
+            }
+        }
+        addSelect();   
+        const showPeople = (people) => {
+                const peopleDiv = document.querySelector("#people-info-box");
+
+                peopleDiv.removeChild(peopleDiv.firstChild);
+                const tableRowEle = document.createElement("table");
+
+                tableRowEle.innerHTML = `
+                        <tr><td><strong> Name:</strong> </td><td>${people.name}</td></tr>    
+                        <tr><td><strong> Rotation Period:</strong> </td><td>${people.rotation_period}</td></tr>    
+                        <tr><td><strong> Orbital Period:</strong> </td><td>${people.orbital_period}</td></tr>    
+                        <tr><td><strong> Diameter:</strong> </td><td>${people.diameter}</td></tr>    
+                        <tr><td><strong> Climate:</strong> </td><td>${people.climate}</td></tr>    
+                        <tr><td><strong> Population:</strong> </td><td>${people.population}</td></tr>    
+                        <tr><td><strong> Surface Water:</strong> </td><td>${people.surface_water}</td></tr>    
+                        <tr><td><strong> Terrain:</strong> </td><td>${people.terrain}</td></tr>    
+                    `;
+                    peopleDiv.append(tableRowEle);
+
+
+             };
+
+
+        function chama(id){
+            var img = document.querySelector("#imgPersonage");
+                img.setAttribute('src', this.p_img[id]);
+           
+            getPeople(id);
+        }
+
+
+        function getPeople(id) {
+            
+            let starwarsAPI = "https://swapi.dev/api/planets/"+id;
+
+            fetch(starwarsAPI )
+            .then((response) => response.json())
+            .then((people) => showPeople(people))
+           ;
+             
+        }    
+    
+    
+        const  showPlanet = (planet) => {
+            console.log(planet.name);
+                 const selectPlanet = document.createElement("select");
+         }
+planet = [];
+        function getlistplanet() {
+           
+            for (let i=1; i<= 60; i++){
+                let starwarsAPI = "https://swapi.dev/api/planets/"+i;
+
+                fetch(starwarsAPI )
+                .then((response) => response.json())
+                .then((planet) => showPlanet(planet));
+                console.log(planet);
+            }
+             //console.log(planet);
+        }    
+
+        getlistplanet();
+    
+    
+    
+    
+    
+    
+    </script>
+
+    
+</body>
+</html>
