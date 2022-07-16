@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Block 2 Challenge Proposals </title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+ 
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/floating-labels/">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      
+      
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+            integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="./css/styleAbout.css">
+
+        <style>
+             .h-btn {
+            cursor: pointer;
+            border-top: 3px solid goldenrod;
+            border-left: 4px solid goldenrod; 
+            border-right: 10px solid goldenrod; 
+            border-bottom: 10px solid goldenrod; 
+            border-radius: 25px; 
+            background-color: transparent;
+            padding: 5px 0;
+            /* height: 60px;
+            width: 100%; */
+            color: #fae103;
+            font-size: 1em;
+            box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+            margin-left: 2rem;
+        }
+        .spaces {
+            margin-left: 2rem;
+            margin-top: 10px;
+        }
+        </style>
+
+</head>
+<body>
+   
+    
+    <div class="spaces">
+        <button class="h-btn" onclick="iniciar()">About</button>
+    </div>
+
+    <div class="spaces">
+        <button class="h-btn" onclick="history.go(-1);">Go Back</button>
+    </div>
+
+
+    <div class="container col-md-12">
+       
+    </div>
+        <section class="intro intro_texto">
+            A Long Time Ago, in a galaxy far,<br> far away ...
+        </section>
+    
+      <section class="paragrafos">
+        <div class="historia historia_texto">
+          <p class="text-center">Star Wars Info </p>
+          <p class="text-center">Episode WDD 330</p>
+          <br>
+          <p class="text-center">
+            In the difficult times where the evil Empire dominates all galaxies, 
+            a galactic epidemic called KOVID – XIX spread, killing thousands of people. 
+            The allies in an unusual effort, using all possible medical resources, 
+            made a vaccine that controlled the situation.
+          </p>
+    
+          <p class="text-center">
+            The allies passed a task called challenge 02 where each member had 
+            to create a system using the resources learned in the class during 
+            the semester. All members have committed to overcome this challenge.
+          </p>
+
+          <p class="text-center">
+            With the help of Master Jedi Andrew, commander of quadrant WDD 330, 
+            of the great galaxy BYU-I, and the members of team 01, 
+            composed of padawans Ana, of the MEX galaxy, Emiles, of the USA galaxy, 
+            José, of the CHI galaxy, Luis, of the unknown galaxy and Hudson, 
+            from galaxy BRA, during 14 time streams, the team won several battles 
+            with only one casualty of padawan Ana. This loss shook the team up a bit, 
+            but with the help of the Force, the team continued on their journey.
+          </p>
+    
+          <p class="text-center">
+            After the 14 time streams, the team managed to finish its 
+            mission and may have a little time flow to get ready for 
+            new missions that will appear next.
+          </p>
+
+          <p class="text-center">
+            This challenge was developed in HTML5, CSS3, JavaScript ES6 
+            technologies with the help of other technologies listed below:
+          </p>
+
+          <p class="">
+            
+            
+            {
+                "name": "infostarwars",
+                "version": "0.0.1", 
+                "private": true, 
+                "scripts": { 
+                 "start": "node ./bin/www" 
+                }, 
+                "dependencies": {
+                  "cookie-parser": "~1.4.4",
+                  "debug": "~2.6.9",
+                  "express": "~4.16.1",
+                  "morgan": "~1.9.1"
+                } 
+              } 
+
+              
+          </p>
+
+          <p class="text-center">
+            Thanks <br>
+
+            StarwarsAPI -  https://swapi.dev/ <br>
+          </p>
+
+
+        </div>
+      </section>
+      
+      <audio src="./img/starwars.mp3" id="som"></audio>
+
+
+    <script>
+     
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+        
+        const intro = document.getElementsByClassName('intro')[0];
+        const historia = document.getElementsByClassName('historia')[0];
+        const paragrafos = document.getElementsByClassName('paragrafos')[0];
+        const som = document.getElementById('som');
+
+        intro.style.fontSize = width / 30 + 'px';
+        historia.style.fontSize = width / 20 + 'px';
+        paragrafos.style.height = height + 'px';
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            intro.style.fontSize = width / 30 + 'px';
+            historia.style.fontSize = width / 20 + 'px';
+            paragrafos.style.height = height + 'px';
+        });
+
+        function iniciar() {
+            intro.className = 'intro intro_texto intro_animacao';
+            historia.className = 'historia historia_texto historia_animacao';
+            som.play();
+        }
+
+        /* Fundo de estrelas */
+
+        let canvas = document.getElementById('snow');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = width;
+        canvas.height = height;
+
+        const num = 100;
+        const size = 2;
+        const elements = [];
+
+        function inicio() {
+            for (let i = 0; i < num; i++) {
+                elements[i] = {
+                x: Math.ceil(Math.random() * width),
+                y: Math.ceil(Math.random() * height),
+                size: Math.random() * size,
+                };
+            }
+        }
+
+        function nevar() {
+            ctx.clearRect(0, 0, width, height);
+            for (let i = 0; i < num; i++) {
+                const e = elements[i];
+                ctx.beginPath();
+                ctx.fillStyle = '#FFFFFF';
+                ctx.arc(e.x, e.y, e.size, 0, 2 * Math.PI);
+                ctx.fill();
+            }
+        }
+
+        inicio();
+        nevar();
+
+        
+
+    </script>
+    
+</body>
+</html>
